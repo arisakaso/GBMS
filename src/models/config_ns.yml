@@ -1,0 +1,45 @@
+# META LEARNER
+in_channels: 6
+channels: 16
+kernel: 5
+dropout: 0
+input_drop: 0
+scale: False
+normalize_factor: 1e6
+alpha: 0
+
+# SOLVER
+solver: sor
+omega: 1.5
+num_iter: 0
+double: False
+
+# OPTIMIZER
+optimizer: adam
+lr: 0.0005
+momentum: 0.5
+beta1: 0.9
+beta2: 0.999
+scheduler: step
+lr_patience: 10
+lr_factor: 0.2
+es_patience: 15
+batch_size: 64
+weight_decay: 0
+
+# DATA
+size: 128
+root_dir: /root/meta-pde-solver/data_share/raw/sor1e9
+train_step: 10
+test_step: 30
+input_step: 2
+use_step: [100, 950]
+train_episode: [0, 19]
+val_episode: [20, 29]
+test_episode: [30, 39]
+
+# OTHERS
+project: multi-steps
+seed: 1
+max_epochs: 50
+decay_step: 30

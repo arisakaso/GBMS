@@ -1,0 +1,46 @@
+# META LEARNER
+mid_size: 1024
+last_activation: sigmoid
+initial_bias: -1
+initial_guess: False
+omega: True
+
+# SOLVER
+tol: 1.0e-9
+maxiter: 2000
+schedule_maxiter: False
+slope: 1 #1281.9131836332265
+log_ind: True
+log_res: False
+last_res: False
+grad_clamp: False
+clamp_range: [-1.0, 2.0]
+
+# OPTIMIZER
+lr: 2.0e-5
+alpha: 100
+gradient_clip_val: 1.0
+gradient_clip_algorithm: norm
+weight_decay: 0
+scheduler: multi_step
+lr_milestone: [100, 150]
+
+# DATA
+data_path: /root/meta-pde-solver/data/raw/rober_sor
+batchsize: 16384
+num_workers: 4
+processed: True
+train: [0, 1000]
+valid: [1000, 2000]
+test: [2000, 3000]
+
+# OTHERS
+project: rober5
+seed: 2
+max_epochs: 200
+es_patience: 800
+lr_patience: 800
+double: True
+fast_dev_run: False
+do_test: True
+test_fixed_omega: False

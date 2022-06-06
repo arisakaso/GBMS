@@ -1,0 +1,42 @@
+# META LEARNER
+in_channels: 2
+channels: 16
+kernel: 11
+dropout: 0
+input_drop: 0
+scale: False
+alpha: 0
+normalize_factor: 1e6
+
+# SOLVER
+solver: sor
+omega: 1.5
+num_iter: 64
+double: False
+
+# OPTIMIZER
+loss: mse
+optimizer: adam
+batch_size: 256
+lr: 0.005
+beta1: 0.9
+beta2: 0.999
+momentum: 0.9
+scheduler: cos
+t_max: 10
+lr_patience: 100
+es_patience: 100
+lr_decay_factor: 0.2
+weight_decay: 0
+
+# DATA
+size: 512
+data_path: /root/meta-pde-solver/data_share/raw/poisson1d/sin_simple_20_20210915.pkl
+num_data: 30000
+normalize: False
+
+# OTHERS
+project: poisson1d
+seed: 3
+max_epochs: 5000
+decay_step: 0
